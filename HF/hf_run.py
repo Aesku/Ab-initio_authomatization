@@ -4,10 +4,13 @@ run multiple inputs with python
 from os import path, system, mkdir, system, remove
 import shutil
 
-#values = [10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
-values = [1,2,5,10,20,50]
-#JOB = 'exx'
-JOB = 'randG'
+values = [10,20,30,40,50,60,70,80,90,100]
+#values = [1,2,5,10,20,50]
+JOB = 'exx'
+#JOB = 'randG'
+
+if JOB == 'exx': LABEL = 'Ry'
+if JOB == 'randG': LABEL = 'RL'
 
 def create_run_file(v):
     new_run_name = "run-%s%s.sh" %(JOB,v)
@@ -23,7 +26,7 @@ def writing_run_file(v):
 def modifying_run_file(name, v):
     f = open(name, 'rt')
     data = f.read()
-    data = data.replace('JOB', JOB + '%s'%v)
+    data = data.replace('JOB', JOB + '%s%s'%(v,LABEL))
     f.close()
     f = open(name, 'wt')
     f.write(data)
@@ -39,4 +42,4 @@ for v in values:
     writing_run_file(v)
     modifying_run_file(run_file, v)
     #Running 
-    run_jobs(v)
+#    run_jobs(v)

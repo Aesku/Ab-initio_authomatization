@@ -6,10 +6,9 @@ import shutil
 
 VB = 1
 
-xc_values = [1,5]
-xb_values = [70]
-#xb_values = [20,30,50,70,100]
-#xc_values = [1,5,10,20]
+xb_values = [100]
+#xc_values = [10,]
+xc_values = [100]
 
 def create_run_file(JOB):
     new_run_name = "run-%s.sh" %JOB

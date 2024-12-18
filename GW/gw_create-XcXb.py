@@ -5,8 +5,9 @@ import shutil
 VB = 1
 
 files = ['yambo_gw.in']
-xb_values = [20,30,50,70,100]
-xc_values = [1,5,10,20]
+xb_values = [50,70,100]
+#xc_values = [10,20]
+xc_values = [100]
 
 for c in xc_values:
     xc_flag = 'NGsBlkXp = %s Ry'%c

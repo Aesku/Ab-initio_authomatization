@@ -4,11 +4,10 @@ run multiple inputs with python
 from os import path, system, mkdir, system, remove
 import shutil
 
-VB = 1
+VB =1
 
-xb_values = [200]
-#xc_values = [10,]
-xc_values = [70]
+xb_values = [110,120,130,140,150,160,170,180,190,200]
+xc_values = [10]
 
 def create_run_file(JOB):
     new_run_name = "run-%s.sh" %JOB
@@ -37,7 +36,7 @@ def run_jobs(JOB):
 #Creating all run.sh files
 for b in xb_values:
     for c in xc_values:
-        JOB = 'Xb%s-%sXc%sRy'%(VB,b,c)
+        JOB = 'Gb%s-%s'%(VB,b)
         run_file = create_run_file(JOB)
         writing_run_file(JOB)
         modifying_run_file(run_file, JOB)
